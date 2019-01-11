@@ -52,16 +52,15 @@ def countingValleys(n, s):
     level = 0
     for i in s:
         #going downside
-        if i == 'D':
-            level -= 1
+        if i == 'U':
+            level += 1
             
         # still in the valley it will be 1 
-        elif level == -1:
-            valley_count += 1
+        elif i == 'D':
+            level -= 1
+            if level == -1:
+                valley_count += 1
             
-            #updating level becoz it's 'U'
-        else:
-            level += 1
     return valley_count
 
 li = "UDDDUDUU"
