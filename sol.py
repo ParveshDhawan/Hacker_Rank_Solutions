@@ -29,4 +29,20 @@ li = [4,10,50,90,30]
 playlist(li)
 
 ######################################################
+# Matching pair inside the list
+def sockMerchant(n, ar):
+    uniq_final = 0
+    counter = 0
+    count = 0
+    uniq = list(set(ar))
+    for i in uniq:
+        for j in range(n):
+            if i == ar[j]:
+                counter += 1
+        final = counter // 2
+        counter = 0
+        count += final
+        #print(count)
+    return count
 
+#####################################################
