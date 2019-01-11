@@ -46,3 +46,29 @@ def sockMerchant(n, ar):
     return count
 
 #####################################################
+# Complete the countingValleys function below.
+def countingValleys(n, s):
+    valley_count = 0
+    level = 0
+    for i in s:
+        #going downside
+        if i == 'D':
+            level -= 1
+            
+        # still in the valley it will be 1 
+        elif level == -1:
+            valley_count += 1
+            
+            #updating level becoz it's 'U'
+        else:
+            level += 1
+    return valley_count
+
+li = "UDDDUDUU"
+countingValleys(len(li),li)
+#output = 1
+#If we represent _ as sea level, a step up as /, and a step down as \, Gary's hike can be drawn as:
+# _/\      _
+#    \    /
+#     \/\/
+######################################################
