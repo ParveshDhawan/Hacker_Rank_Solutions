@@ -77,3 +77,39 @@ countingValleys(len(li),li)
 def count_turn(n,p):
     return min(p // 2, n //2 - p // 2)
     
+##########################################################################
+## Electronic Shop :- sum of two list element and check for specific amount condition
+
+def getMoneySpent(keyboards, drives, b):
+    combo = []
+    final = []
+    for i in keyboards:
+        for j in drives:
+            combo.append(i+j)
+    combo = set(combo)
+    for l in combo:
+        if l <= b:
+            final.append(l)
+    if len(final) == 0:
+        return -1
+
+    return max(final)
+
+## Another Approch ###------
+def gms(keyboards, drives, b):
+    final_spent = -1
+    for i in keyboards:
+        for j in drives:
+            if(i + j <= b):
+                final_spent = max(final_spent, i + j)
+
+    return final_spent
+
+##########  o/p
+getMoneySpent([3,1],[5,2,8],10)
+#10 2 3
+#3 1
+#5 2 8
+#ans will be 8 + 1= 9
+
+##################################################################
