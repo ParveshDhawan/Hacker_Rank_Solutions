@@ -71,3 +71,9 @@ countingValleys(len(li),li)
 #    \    /
 #     \/\/
 ######################################################
+
+#Drawing Book --Find the page number w.r.t min turns:
+##here n=  total pages //   p = page number
+def count_turn(n,p):
+    return min(p // 2, n //2 - p // 2)
+    
